@@ -18,30 +18,6 @@ namespace iOS13SimulatorEntryRepro
                 CompressedLayout.SetIsHeadless(layout, true);
         }
 
-        public static void CancelAllAnimations(VisualElement element)
-        {
-            switch (element)
-            {
-                case ContentView contentView:
-                    CancelAllAnimations(contentView.Content);
-                    break;
-
-                case Layout<View> layout:
-                    var childLayoutsOfLayout = GetChildLayouts(layout);
-
-                    foreach (var childLayout in childLayoutsOfLayout)
-                        CancelAllAnimations(childLayout);
-
-                    foreach (var view in layout.Children)
-                        CancelAllAnimations(view);
-                    break;
-
-                case View view:
-                    ViewExtensions.CancelAnimations(view);
-                    break;
-            }
-        }
-
         static IEnumerable<Layout<View>> GetChildLayouts(in Layout<View> layout)
         {
             if (layout.Children is null || !layout.Children.Any())
