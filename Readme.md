@@ -17,6 +17,10 @@ System.NullReferenceException: Object reference not set to an instance of an obj
   at iOS13SimulatorEntryRepro.iOS.Application.Main (System.String[] args) [0x00000] in /Users/bramin/Projects/iOS13SimulatorEntryRepro/iOS13SimulatorEntryRepro.iOS/Main.cs:7
 ```
 
+## Demo
+
+![Demo gif](https://user-images.githubusercontent.com/13558917/65802858-bbaf8480-e131-11e9-829b-2405cba92a2b.gif)
+
 ## Environment
 
 === Visual Studio Enterprise 2019 for Mac ===
